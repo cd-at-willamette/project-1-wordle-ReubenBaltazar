@@ -12,14 +12,24 @@ import random
 
 def wordle():
     # The main function to play the Wordle game.
-
-    def enter_action():
-        # What should happen when RETURN/ENTER is pressed.
-        gw.show_message("You need to implement this method")
-
-
+    #milestone #0
     gw = WordleGWindow()
+    word='HELLO'
+    for i in range(len(word)):
+        gw.set_square_letter(0, i, word[i])
+
+
+    #milestone #1
+    def enter_action():
+        word =''
+        if word in ENGLISH_WORDS: 
+            gw.show_message("hooray")
+        else: 
+            gw.show_message("womp womp")
+
     gw.add_enter_listener(enter_action)
+
+
 
 
 
